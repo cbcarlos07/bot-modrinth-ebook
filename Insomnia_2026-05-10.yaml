@@ -1,0 +1,114 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: Scratch Pad
+meta:
+  id: wrk_scratchpad
+  created: 1719233702113
+  modified: 1719233702113
+  description: ""
+collection:
+  - url: http://localhost:3001
+    name: init
+    meta:
+      id: req_f4c39dc5e1904bfeb6c5c3cb4093b9ab
+      created: 1778008850215
+      modified: 1778008956555
+      isPrivate: false
+      description: ""
+      sortKey: -1778008850215
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/12.5.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3001/auth
+    name: New Request
+    meta:
+      id: req_12265379407a43c3b4fca0b27f8456e7
+      created: 1778438772654
+      modified: 1778439334929
+      isPrivate: false
+      description: ""
+      sortKey: -1778438772654
+    method: PATCH
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"email": "meu-test@email.com",
+        	"password": "123456789"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.5.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3001/discord/send
+    name: New Request
+    meta:
+      id: req_34605392c6c6451989cd6f05727960b7
+      created: 1778442402279
+      modified: 1778442421206
+      isPrivate: false
+      description: ""
+      sortKey: -1778442402279
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/12.5.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1776805019112
+    modified: 1777915732857
+  cookies:
+    - id: ea02f134-0ec0-4412-8872-321820b59d18
+      key: _cfuvid
+      value: E1DJLTgnvabnQZIvRK5gZQQ.bi_mJ808HX78ZwjDSkQ-1777915732.8808084-1.0.1.1-3dMxVYmV4zTKlLYhcxzaoZCZCoFTe9QjehJZW3dvPxw
+      domain: modrinth.com
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: false
+environments:
+  name: Base Environment
+  meta:
+    id: env_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1776805019108
+    modified: 1777915719859
+    isPrivate: false
+  data:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJldGluaG9AZ21haWwuY29tIiwiaWF0IjoxNzc3OTE1NzE5LCJleHAiOjE3NzgwMDIxMTl9.z-zfLZGteF0RMY6-zDYfdl6O_CYuF9vp2Fw_ADdqeN8
+    host: http://localhost:3001
+    endpoint: "{% request 'folder', '', 0 %}"
+    api: "{{host}}/{{ _.endpoint }}"
