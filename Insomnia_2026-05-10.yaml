@@ -1,27 +1,22 @@
 type: collection.insomnia.rest/5.0
-schema_version: "5.1"
-name: Scratch Pad
+name: bot modrinth ebook
 meta:
-  id: wrk_scratchpad
-  created: 1719233702113
-  modified: 1719233702113
-  description: ""
+  id: wrk_70518ba1e8fc43eeb0d36bf08f461f0d
+  created: 1778451931446
+  modified: 1778451931446
 collection:
   - url: http://localhost:3001
     name: init
     meta:
-      id: req_f4c39dc5e1904bfeb6c5c3cb4093b9ab
+      id: req_ede0958d2b54438797953e099189f32f
       created: 1778008850215
       modified: 1778008956555
       isPrivate: false
-      description: ""
       sortKey: -1778008850215
     method: GET
     headers:
       - name: User-Agent
         value: insomnia/12.5.0
-        description: ""
-        disabled: false
     settings:
       renderRequestBody: true
       encodeUrl: true
@@ -31,13 +26,12 @@ collection:
         store: true
       rebuildPath: true
   - url: http://localhost:3001/auth
-    name: New Request
+    name: "Autenticar "
     meta:
-      id: req_12265379407a43c3b4fca0b27f8456e7
+      id: req_4fd2cc65ee244d29a3ae461f6ce79948
       created: 1778438772654
-      modified: 1778439334929
+      modified: 1778452136112
       isPrivate: false
-      description: ""
       sortKey: -1778438772654
     method: PATCH
     body:
@@ -52,8 +46,6 @@ collection:
         value: application/json
       - name: User-Agent
         value: insomnia/12.5.0
-        description: ""
-        disabled: false
     settings:
       renderRequestBody: true
       encodeUrl: true
@@ -63,20 +55,55 @@ collection:
         store: true
       rebuildPath: true
   - url: http://localhost:3001/discord/send
-    name: New Request
+    name: discord
     meta:
-      id: req_34605392c6c6451989cd6f05727960b7
+      id: req_546203f471264b9e9b56671b2276b755
       created: 1778442402279
-      modified: 1778442421206
+      modified: 1778454305535
       isPrivate: false
-      description: ""
       sortKey: -1778442402279
-    method: GET
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"message": "Teste"
+        }
     headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_956b01945b4041d5a10606f06767823a
       - name: User-Agent
         value: insomnia/12.5.0
-        description: ""
-        disabled: false
+        id: pair_f81a3211f3a5495994c1e8209d0a3e63
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3001/modrinth/projects
+    name: New Request
+    meta:
+      id: req_adced5c987a3496eb2a2ee1cf1a97899
+      created: 1778503891213
+      modified: 1778505485714
+      isPrivate: false
+      sortKey: -1778503891213
+    method: PATCH
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"projects": ["mEgjeuAl"]
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.0.2
     settings:
       renderRequestBody: true
       encodeUrl: true
@@ -88,27 +115,13 @@ collection:
 cookieJar:
   name: Default Jar
   meta:
-    id: jar_99d30891da4bdcebc63947a8fc17f076de878684
-    created: 1776805019112
-    modified: 1777915732857
-  cookies:
-    - id: ea02f134-0ec0-4412-8872-321820b59d18
-      key: _cfuvid
-      value: E1DJLTgnvabnQZIvRK5gZQQ.bi_mJ808HX78ZwjDSkQ-1777915732.8808084-1.0.1.1-3dMxVYmV4zTKlLYhcxzaoZCZCoFTe9QjehJZW3dvPxw
-      domain: modrinth.com
-      path: /
-      secure: true
-      httpOnly: true
-      hostOnly: false
+    id: jar_2a705f58fc6a8418bb91237a11b843bde5e515cf
+    created: 1778451931459
+    modified: 1778451931459
 environments:
   name: Base Environment
   meta:
-    id: env_99d30891da4bdcebc63947a8fc17f076de878684
-    created: 1776805019108
-    modified: 1777915719859
+    id: env_2a705f58fc6a8418bb91237a11b843bde5e515cf
+    created: 1778451931453
+    modified: 1778451931453
     isPrivate: false
-  data:
-    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJldGluaG9AZ21haWwuY29tIiwiaWF0IjoxNzc3OTE1NzE5LCJleHAiOjE3NzgwMDIxMTl9.z-zfLZGteF0RMY6-zDYfdl6O_CYuF9vp2Fw_ADdqeN8
-    host: http://localhost:3001
-    endpoint: "{% request 'folder', '', 0 %}"
-    api: "{{host}}/{{ _.endpoint }}"
