@@ -19,6 +19,19 @@ class  ModrinthController extends BaseController{
             .then(data => res.json(data))
             .catch(err => res.status(this.StatusCodes.INTERNAL_SERVER_ERROR).json({error: err.message}));
     }
+
+    getDataFromProjectVersion(req, res){
+        const {version} = req.params;
+        this.service.getDataFromProjectVersion(version)
+            .then(data => res.json(data))
+            .catch(err => res.status(this.StatusCodes.INTERNAL_SERVER_ERROR).json({error: err.message}));
+    }
+
+    testMessage(req, res){
+        this.service.testMessage()
+            .then(data => res.json(data))
+            .catch(err => res.status(this.StatusCodes.INTERNAL_SERVER_ERROR).json({error: err.message}));
+    }
 }
 
 module.exports = new ModrinthController(service)

@@ -12,6 +12,8 @@ class ModrinthRouter extends BaseRouter{
     init(){
         this.router.patch(`${this.prefix}/projects`, this.controller.getDataFromMultipleProjects.bind(this.controller));
         this.router.get(`${this.prefix}/project/:project`, this.controller.getDataFromProject.bind(this.controller));
+        this.router.get(`${this.prefix}/version/:version`, this.controller.getDataFromProjectVersion.bind(this.controller));
+        this.router.get(`${this.prefix}/test`, this.controller.testMessage.bind(this.controller));
         
         return this.router
     }
