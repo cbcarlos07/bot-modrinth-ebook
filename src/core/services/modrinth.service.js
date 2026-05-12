@@ -49,7 +49,7 @@ class ModrinthService {
     }
 
     prepareMessage(project, version, type) {
-        return version ? `>[${type}] New update of the modpack: ${project.title}
+        return version ? `> [${type}] New update of the modpack: ${project.title}
 🆕 @everyone New version of the modpack: ${project.title}
 **Version**: ${version.version_number}
 **Changelog**:
